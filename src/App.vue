@@ -1,9 +1,9 @@
 <template>
   <div id="app" :style="'height:'+fullHeight+'px'">
     <Menu mode="horizontal" theme="dark" active-name="home" @on-select="go2Page">
-      <MenuItem name="home"> 首页
+      <MenuItem name="home"> Canvas
       </MenuItem>
-      <MenuItem name="test"> test
+      <MenuItem name="demo"> Demo
       </MenuItem>
     </Menu>
     <div class="app-main">
