@@ -26,8 +26,8 @@
                     </field>
                     <field label="Show Lines">
                         <i-switch v-model="showLines">
-                            <Icon type="android-done" slot="open"></Icon>
-                            <Icon type="android-close" slot="close"></Icon>
+                            <!-- <Icon type="android-done" slot="open"></Icon>
+                            <Icon type="android-close" slot="close"></Icon> -->
                         </i-switch>
                     </field>
                     <div style="margin-top:15px">

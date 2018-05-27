@@ -25,9 +25,9 @@
             };
         },
         mounted() {
-            this.imageList.push(require("../../static/img/demo1.png"));
-            this.imageList.push(require("../../static/img/demo2.png"));
-            this.imageList.push(require("../../static/img/demo3.png"));
+            this.imageList.push("http://wx1.sinaimg.cn/large/6f90e942ly1frqdmpdw2ij211s0mrjsp.jpg");
+            this.imageList.push("http://wx3.sinaimg.cn/large/6f90e942ly1frqdmnzc63j211s0mrq4c.jpg");
+            this.imageList.push("http://wx4.sinaimg.cn/large/6f90e942ly1frqdmmmbfij20ty0mrtab.jpg");
         },
         methods: {
             showBigImage(item){
@@ -82,5 +82,10 @@
     .v-transfer-dom >>> .ivu-modal-footer {
         border: 0px;
         padding: 0px;
+    }
+    .v-transfer-dom >>> .ivu-icon-ios-close-empty::before {
+        width:0px;
+        height:0px;
+        visibility: hidden;
     }
 </style>
