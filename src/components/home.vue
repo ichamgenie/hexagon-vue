@@ -13,16 +13,16 @@
                     </svg>
                 </div>
             </Col>
-            <Col span="6" style="height:100">
+            <Col span="6" style="height:100%;box-shadow: 0px 0px 16px #cccccc;">
                 <div class="right-panel">
                     <field label="Tips">
                         <div style="color:#dddddd">Use ↑ ↓ ← → to rotate and flip.</div>
                     </field>
                     <field label="Width">
-                        <Slider v-model="taLength" :step="5" :min="10" :max="50" show-stops show-input></Slider>
+                        <Slider v-model="taLength" :step="5" :min="10" :max="50" show-stops></Slider>
                     </field>
                     <field label="Levels">
-                        <Slider v-model="inputR" :step="5" :min="5" :max="30" show-stops show-input></Slider>
+                        <Slider v-model="inputR" :step="5" :min="5" :max="30" show-stops></Slider>
                     </field>
                     <field label="Show Lines">
                         <i-switch v-model="showLines">
@@ -70,6 +70,7 @@
                 showLines:true,
                 fillColor: "#ddddff",
                 strokeColor: "#0000ff",
+                taStrokeColor: "#eeeeeeee"
             };
         },
         watch: {
@@ -133,6 +134,11 @@
                 let svgDom = document.getElementById("svg-container");
                 that.svgWidth = svgDom.clientWidth;
                 that.svgHeight = svgDom.clientHeight;
+
+                if(that.svgWidth>1440)
+                {
+                    that.inputR = 20;
+                }
 
                 that.centerX = Math.round(that.svgWidth/2);
                 that.centerY = Math.round(that.svgHeight/2);
@@ -389,7 +395,7 @@
             },
             getStyle(param)
             {
-                let color = this.showLines?"#eeeeee99":"#dddddd00";
+                let color = this.showLines?this.taStrokeColor:"#dddddd00";
                 if(param.ang==0)
                 {
                     return {
@@ -504,11 +510,12 @@
 
     #svg-container {
         width: calc(100% - 80px);
-        height: calc(100% - 80px);;
+        height: calc(100% - 80px);
         margin-left: 40px;
         margin-top: 40px;
         text-align: center;
         background: #ffffff;
+        box-shadow: 0px 0px 16px #cccccc;
     }
 
     .right-panel{

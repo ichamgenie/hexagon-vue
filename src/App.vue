@@ -5,6 +5,8 @@
       </MenuItem>
       <MenuItem name="demo"> Demo
       </MenuItem>
+      <MenuItem name="about"> About
+      </MenuItem>
     </Menu>
     <div class="app-main">
       <router-view/>

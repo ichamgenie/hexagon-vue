@@ -73,6 +73,7 @@
         margin-right:20px;
         float: left;
         border-radius: 6px;
+        box-shadow: 0px 0px 16px #cccccc;
     }
     .demo-image {
         height: 100%;
