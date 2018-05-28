@@ -26,7 +26,7 @@
         },
         mounted() {
             this.imageList.push("http://wx1.sinaimg.cn/large/6f90e942ly1frqdmpdw2ij211s0mrjsp.jpg");
-            this.imageList.push("http://wx3.sinaimg.cn/large/6f90e942ly1frqdmnzc63j211s0mrq4c.jpg");
+            this.imageList.push("http://wx3.sinaimg.cn/large/536cc3d9ly1frrh82wahjj21f40wr411.jpg");
             this.imageList.push("http://wx4.sinaimg.cn/large/6f90e942ly1frqdmmmbfij20ty0mrtab.jpg");
         },
         methods: {
