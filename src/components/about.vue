@@ -8,8 +8,8 @@
                 <div class="mid-line"/>
                 <div class="text-panel">
                     <div class="text-container">
-                        这个画图工具的想法来<br/>
-                        自于高中上课的时候一次开小差<br/>
+                        这个画图工具的想法<br/>
+                        来自于高中上课的时候一次开小差<br/>
                         画了这么一个图形<br/>
                         发现一个不怎么规则的图形可以这样无限填满整个平面<br/>
                         还挺好看的<br/>
