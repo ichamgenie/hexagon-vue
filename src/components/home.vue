@@ -90,6 +90,8 @@
         },
         mounted() {
             var that = this;
+
+            //键盘事件监听，用于控制图元的旋转和翻转
             window.onkeydown = function(e){
                 switch(e.code)
                 {
@@ -125,6 +127,7 @@
             this.refreshGuides();
         },
         methods: {
+            //刷新页面大小
             refreshSize(that)
             {
                 let svgDom = document.getElementById("svg-container");
@@ -134,6 +137,8 @@
                 that.centerX = Math.round(that.svgWidth/2);
                 that.centerY = Math.round(that.svgHeight/2);
             },
+
+            //刷新参考线
             refreshGuides() {
                 
                 this.hexagonR = this.inputR;
@@ -200,10 +205,8 @@
                     this.dataList.push(taParam0);
                 }
             },
-            handleKeyDowm(event)
-            {
-                console.log(event);
-            },
+
+            //将某个dom加为另一个dom的第一个子节点
             prependChild(o,s){ 
                 if(s.hasChildNodes()){ 
                     s.insertBefore(o,s.firstChild); 
@@ -211,6 +214,8 @@
                     s.appendChild(o); 
                 } 
             },
+
+            //获取三角形的第一个点
             getStartPoint(event, item){
                 let dValue = event.target.attributes.d.value;
                 let tmp = dValue.split(" ");
@@ -246,6 +251,8 @@
             {
                 return (ang+this.currentPattern)%6;
             },
+
+            //获取图元的路径
             getPointList(startPoint){
                 let angs = [4, 5, 0, 1 ,3];
                 if(this.currentFlag!=0)
@@ -274,12 +281,16 @@
             getItemKeyTmp(startPoint){
                 return this.getItemKey(startPoint)+"-tmp";
             },
+
+            //鼠标进入一个三角形时
             enterTriangle(event, item) {
                 this.removeElement(this.currentKey);
                 let startPoint = this.getStartPoint(event, item);
                 this.currentStartPoint = startPoint;
                 this.addElement(startPoint);
             },
+
+            //添加预览一个图元
             addElement(startPoint)
             {
                 let pointList = this.getPointList(startPoint);
@@ -303,12 +314,16 @@
                 // document.getElementById("svg").appendChild(pathDom);
                 this.currentKey = key;
             },
+
+            //鼠标离开一个三角形时
             exitTriangle(event, item){
                 // let startPoint = this.getStartPoint(event, item);
                 // let key = this.getItemKeyTmp(startPoint);
 
                 this.removeElement(this.currentKey);
             },
+
+            //删除一个图元
             removeElement(key)
             {
                 var parent=document.getElementById("svg");
@@ -323,6 +338,8 @@
                 }
                 parent.removeChild(child);
             },
+
+            //添加一个图元
             addItem(event, item) {
                 let startPoint = this.getStartPoint(event, item);
 
@@ -390,6 +407,8 @@
                     }
                 }
             },
+
+            //下载当前图片
             downloadImage() {
                 var svgXml = document.getElementById("svg-container").innerHTML;
 
@@ -410,6 +429,8 @@
                     a.click(); //点击触发下载
                 };
             },
+
+            //刷新画布
             refreshSvg(){
                 this.refreshSize(this);
                 this.refreshGuides();
@@ -418,6 +439,8 @@
                     this.removeElement(item);
                 }
             },
+
+            //回滚添加的图元
             undoItem(){
                 let lastItemKey = this.itemKeyList.pop();
                 if(lastItemKey)
