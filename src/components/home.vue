@@ -54,7 +54,7 @@
                 dataList: [],
                 itemKeyList:[],
                 sqrt32: Math.sqrt(3) / 2,
-                taLength: 30,
+                taLength: 40,
                 taL:0,
                 taH:0,
                 inputR: 10,
@@ -134,11 +134,6 @@
                 let svgDom = document.getElementById("svg-container");
                 that.svgWidth = svgDom.clientWidth;
                 that.svgHeight = svgDom.clientHeight;
-
-                if(that.svgWidth>1440)
-                {
-                    that.inputR = 20;
-                }
 
                 that.centerX = Math.round(that.svgWidth/2);
                 that.centerY = Math.round(that.svgHeight/2);
