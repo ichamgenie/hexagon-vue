@@ -74,6 +74,7 @@
         float: left;
         border-radius: 6px;
         box-shadow: 0px 0px 16px #cccccc;
+        cursor: pointer;
     }
     .demo-image {
         height: 100%;
