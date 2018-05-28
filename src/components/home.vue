@@ -16,7 +16,7 @@
             <Col span="6" style="height:100%;box-shadow: 0px 0px 16px #cccccc;">
                 <div class="right-panel">
                     <field label="Tips">
-                        <div style="color:#dddddd">Use ↑ ↓ ← → to rotate and flip.</div>
+                        <div style="color:#777777">Use ↑ ↓ ← → to rotate and flip.</div>
                     </field>
                     <field label="Width">
                         <Slider v-model="taLength" :step="5" :min="10" :max="50" show-stops></Slider>
